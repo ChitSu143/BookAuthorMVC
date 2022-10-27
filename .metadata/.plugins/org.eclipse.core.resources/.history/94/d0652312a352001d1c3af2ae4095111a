@@ -1,0 +1,32 @@
+package com.hostmdy.jpa.data;
+
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+
+import com.hostmdy.jpa.entity.Author;
+import com.hostmdy.jpa.entity.Book;
+import com.hostmdy.jpa.repostory.AuthorRepository;
+import com.hostmdy.jpa.repostory.BookRepository;
+
+public class InitialDataLoader implements ApplicationListener<ContextRefreshedEvent> {
+	private BookRepository bookRepository;
+	private AuthorRepository authorRepoitory;
+	
+	
+	
+	@Override
+	public void onApplicationEvent(ContextRefreshedEvent event) {
+		initialized();
+	}
+	
+	private void initialized()
+	{
+		Book book1=new Book("Eric Evan","Doman Driven Design",34.5);
+		Author author1=new Author("Eric", "Evan",60,"eric@gmail.com");
+		book1.getAuthors().add(book1);
+		author1.getBooks().add(author1);
+		bookRepository.save(book1);
+		authorRepository.save(author1);
+	}
+
+}

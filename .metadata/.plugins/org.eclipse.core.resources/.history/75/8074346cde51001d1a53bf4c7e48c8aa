@@ -1,0 +1,12 @@
+package com.hostmdy.jpa.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Author {
+	@Id
+	private Integer id;
+	private 
+
+}

@@ -1,0 +1,19 @@
+package com.hostmdy.jpa.data;
+
+import com.hostmdy.jpa.entity.Author;
+
+public class InitialDataLoader extends ApplicationListener<ContextRefreshedEvent> {
+	@Override
+	public void onApplicationEvent(ContextRdfreshedEvent event) {
+		initialized();
+	}
+	
+	private void initialized()
+	{
+		Book book1=new Book("Eric Evan","Doman Driven Design",34.5);
+		Author author1=new Author("Eric", "Evan",60,"eric@gmail.com");
+		book1.getAuthors().add(book1);
+		author1.getBooks().add(author1);
+	}
+
+}

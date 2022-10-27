@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Book List</title>
+</head>
+<body>
+	<h2>
+		Book List
+	</h2>
+	
+	<table border="1" bordercolor="green">
+        <tr>
+             <th>ID</th><th>Book Title</th><th>genere</th><th>Price</th>
+        </tr>
+        
+        <tr>
+            <td>Aung Aung</td><td>09-123456789</td><td>aungaung@gmail.com</td>
+            
+        </tr>
+        
+
+    </table>
+</body>
+
+
+</html>

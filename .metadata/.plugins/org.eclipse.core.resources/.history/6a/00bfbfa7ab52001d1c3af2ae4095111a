@@ -1,0 +1,28 @@
+package com.hostmdy.jpa.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hostmdy.jpa.repostory.BookRepository;
+
+@Controller
+public class BookController {
+	
+	private BookRepository bookRepository;
+
+	/*public BookController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}*/
+
+	public BookController(BookRepository bookRepository) {
+		super();
+		this.bookRepository = bookRepository;
+	}
+	
+	@RequestMapping
+	private String showBookList() {
+		
+	}
+
+}

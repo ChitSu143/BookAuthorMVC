@@ -1,0 +1,34 @@
+package com.hostmdy.jpa.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hostmdy.jpa.entity.Book;
+import com.hostmdy.jpa.repostory.BookRepository;
+
+@Controller
+public class BookController {
+	//To do this decencies injection
+	private BookRepository bookRepository;
+
+	public BookController(BookRepository bookRepository) {
+		super();
+		this.bookRepository = bookRepository;
+	}
+	
+	
+	// all create methods in controller must return string variable for template name
+	@RequestMapping("/book")
+	private String showBookList(Model model) {
+		List<Book> bookList = (List<Book>)bookRepository.findAll();
+		model.addAttribute("bookList",bookList);
+	
+		
+		
+	return "bookList";
+	}
+
+}

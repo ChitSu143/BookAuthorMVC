@@ -1,0 +1,5 @@
+package com.hostmdy.jpa.data;
+
+public class InitialDataLoader {
+
+}

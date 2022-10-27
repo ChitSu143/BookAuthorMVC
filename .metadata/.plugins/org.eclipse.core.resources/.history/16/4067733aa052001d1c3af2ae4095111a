@@ -1,0 +1,5 @@
+package com.hostmdy.jpa.repostory;
+
+public interface AuthorRepository {
+
+}
